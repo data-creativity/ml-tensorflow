@@ -13,5 +13,5 @@ dependencies = [
 ]
 
 [[tool.uv.index]]
-url = "https://mirrors.ustc.edu.cn/pypi/simple"
+url = "http://mirrors.aliyun.com/pypi/simple/"
 default = true
