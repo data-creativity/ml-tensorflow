@@ -3,15 +3,25 @@ name = "ml-tensorflow"
 version = "0.1.0"
 description = "Add your description here"
 readme = "README.md"
-requires-python = ">=3.13"
+# workaroud by hiding key to fit different os platform
+# requires-python = ">=3.13"
 dependencies = [
     "matplotlib>=3.10.6",
-    "numpy>=2.3.3",
     "scipy>=1.16.2",
+    # Windows
+    "numpy>=2.3.3; sys_platform != 'darwin'",
     "tensorflow>=2.20.0; sys_platform != 'darwin'",
-    "tensorflow-cpu>=2.20.0; sys_platform == 'darwin'",
+    # macOS
+    "numpy>=1.26.4; sys_platform == 'darwin'",
+    "tensorflow-cpu>=2.16.2; sys_platform == 'darwin'",
 ]
 
 [[tool.uv.index]]
 url = "http://mirrors.aliyun.com/pypi/simple/"
 default = true
+
+# intel macOS
+[tool.uv]
+required-environments = [
+    "sys_platform == 'darwin' and platform_machine == 'x86_64'"
+]
