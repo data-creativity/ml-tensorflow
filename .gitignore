@@ -11,6 +11,8 @@ wheels/
 
 # uv
 uv.lock
+.python-version
+pyproject.toml
 
 # IDE
 .idea
